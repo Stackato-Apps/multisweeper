@@ -1,0 +1,526 @@
+@font-face {
+    font-family:'classic-robot';
+    src: url('/fonts/Classic-Robot.ttf');
+}
+
+html {
+    background: #d8e7ec url(/images/robot_and_bird.png) bottom left no-repeat fixed;
+    font-family: Helvetica;
+}
+
+#nkoVote {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-bottom: 20px;
+}
+
+#credits {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
+    text-align: center;
+}
+
+#credits a {
+    text-decoration: none;
+    color: #e46949;
+}
+
+.stats {
+    color: #AB6654;
+}
+
+.stats b {
+    font-weight: bolder;
+}
+
+#play {
+    position: absolute;
+    right: 10%;
+    border: 2px solid #468599;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #468599;
+    margin-top: 150px;
+}
+
+#play p {
+    color: white;
+    font-size: 24px;
+}
+
+#content {
+    text-align: right;
+    margin-right: 10%;
+    margin-left: 40%;
+}
+
+#content.credits {
+    margin-left: 25%
+}
+
+#content h1 {
+    font-size: 64px;
+    font-family: classic-robot, Helvetica;
+    font-weight: bold;
+}
+
+#content h3 {
+    font-size: 24px;
+    color: #AB6654;
+}
+
+#content a {
+    font-size: 36px;
+    text-decoration: none;
+    color: #e46949;
+}
+
+#content a:visited {
+    font-size: 24px;
+    text-decoration: none;
+}
+
+#content p {
+    font-size: 24px;
+}
+
+#content p.smaller, #content p.smaller a {
+    font-size: 18px;
+}
+
+#content ul {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#content li, #content li a {
+    font-size: 20px;
+}
+
+#content ul.smaller li, #content ul.smaller li a{
+    font-size: 18px;
+}
+
+#main, .social {
+    width: 1020px;
+    margin:auto;
+    margin-top: 10px;
+}
+
+#board {
+    text-align: left;
+    margin-left: 10%;
+}
+
+#joinForm {
+    margin-top: 150px;
+}
+
+
+#main form {
+    text-align: right;
+    margin-left: 40%;
+}
+
+#main input[type="text"] {
+    background: #d8e7ec;
+    border: 1px solid #468599;
+    font-size: 24px;
+    width: 325px;
+}
+
+#main input[type="button"] {
+    background: #d8e7ec;
+    border: 1px solid #468599;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.players {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 50px;
+    list-style: none;
+}
+
+.player {
+    float: left;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: bold;
+    margin-right: 10px;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.player:last-child {
+    margin-right: 0px;
+}
+.help {
+    float: right;
+    background: #cda075;
+    margin-left: 10px;
+}
+
+.multiplier {
+    float: right;
+    background: #61a166;
+    color: #ffffff;
+}
+
+.help-overlay h2 {
+    font-family: classic-robot;
+    font-size: 22px;
+}
+
+.help-overlay .details {
+    font-size: 18px;
+}
+
+.playerWrapper {
+
+}
+
+.player span.name {
+    display: block;
+    margin-top: 7px;
+    padding-left: 5px;
+}
+
+.player span.score {
+    float: right;
+    clear: left;
+    padding-right: 5px;
+    font-size: 24px;
+}
+
+.player-blue {
+    background: #51baff;
+}
+
+.player-green {
+    background: #78cf64;
+}
+
+.player-orange {
+    background: #ffa350;
+}
+
+.player-pink {
+    background: #ff4ee2;
+}
+
+.player-purple {
+    background: #c67cff;
+}
+
+.player-red {
+    background: #ff5c51;
+}
+
+.player-yellow {
+    background: #ebc42a;
+}
+
+.player .score {
+    display: inline;
+    font-size: 12px;
+}
+
+.board {
+    width: 1020px;
+    height: 340px;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+}
+
+.row {
+    height: 16px;
+}
+
+.cell {
+    width: 16px;
+    float: left;
+    background: #ccc;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    text-align: center;
+    cursor: pointer;
+}
+
+.unknown {
+    border-left: 1px outset;
+    border-top: 1px outset;
+}
+
+.unknown span {
+    display: none;
+}
+
+.unknown:hover {
+    border-left: 1px inset;
+    border-top: 1px inset;
+}
+
+.revealed {
+    background: #aaa;
+    font-family: helvetica;
+    font-weight: bold;
+    cursor: auto;
+}
+
+.revealed span {
+    padding-left: 4px;
+}
+
+.bomb {
+    background: #ccc url(/images/bomb.png) no-repeat 1px 1px;
+}
+
+.bomb span {
+    display: none;
+}
+
+.flag {
+    background: #ccc url(/images/flag_blue.png) no-repeat 1px 1px;
+}
+
+.flag span {
+    display: none;
+}
+
+.nearby0 span {
+    display: none;
+}
+
+.nearby1 span {
+    color: blue;
+}
+
+.nearby2 span {
+    color: green;
+}
+
+.nearby3 span {
+    color: #a00000;
+}
+
+.nearby4 span {
+    color: #b10000;
+}
+
+.nearby5 span {
+    color: #c20000;
+}
+
+.nearby6 span {
+    color: #d40000;
+}
+
+.nearby7 span {
+    color: #e50000;
+}
+
+.social h3 {
+    font-size: 24px;
+    background: #468599;
+    color: #E6F2F6;
+}
+
+.social div#log b {
+    font-weight: bolder;
+}
+
+.social div:not("#log") {
+    font-size: 16px;
+    background: #468599;
+    color: #E6F2F6;
+}
+
+.social input {
+    font-size: 16px;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.9);
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.gameover {
+    font-family: classic-robot;
+}
+
+.gameover h2, .modal h2 {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.gameover, .modal {
+    border: 5px solid #62a16a;
+    background: #d8e7ec;
+    z-index: 2;
+    width: 500px;
+    padding: 5px;
+    font-size: 20px;
+    position:absolute;
+    top:20%;
+    left:50%;
+    margin-left:-250px
+}
+
+.gameover .button, .modal .button {
+    float: right;
+    background: #62a16a;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 3px 10px;
+    margin-right: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.gameover .content, .modal .content {
+    background: #e5e5e5;
+    padding:15px;
+    margin: 15px;
+}
+
+.gameover .result {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 5px;
+}
+
+.gameover .name {
+    width: 300px;
+}
+
+.gameover .footnote {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.gameover a {
+    color: #62a16a;
+}
+.gameover .score {
+    float: right;
+}
+
+.gameover .twitter-share-button {
+    float: right;
+    margin-right: 10px;
+    height: 20px;
+}
+
+.hall {
+    font-family: classic-robot;
+}
+
+.hall h1 {
+    font-size: 64px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hall h2 {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hall .preamble {
+    font-size: 16px;
+    margin:auto;
+    width: 430px;
+    margin-bottom: 15px;
+}
+.hall .beat {
+    float: right;
+}
+.hall .preamble a {
+    color: #62a16a;
+}
+.highscores {
+    border: 5px solid #62a16a;
+    margin: auto;
+    width: 400px;
+    background: #b38d68;
+    padding:15px;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.entry {
+    padding-left: 15px;
+}
+
+.score {
+    float: right;
+    padding-right: 15px;
+}
+
+#log {
+    height: 150px;
+    width: 1020px;
+    overflow: auto;
+    border: 1px solid #008cda;
+    background: #d8e7ec;
+    opacity: 0.7;
+}
+#chat {
+    margin-top: 5px;
+    width: 930px;
+    background: #d8e7ec;
+    opacity: 0.7;
+    height: 20px;
+}
+.chat, .messages {
+    background: #62a16a;
+    color: #ffffff;
+    padding: 5px 5px;
+    height: 20px;
+}
+
+#gameControls  input[type="button"] {
+    float: left;
+}
+
+.waiting {
+    margin-bottom: 10px;
+}
+.waiting.active {
+    display: none;
+}
+.waiting.inactive {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+.inactive {
+    display: none;
+}
+.clear {
+    clear: both;
+}
+.right {
+    float: right;
+}
+}

@@ -1,0 +1,54 @@
+<script src="/socket.io/socket.io.js"></script>
+
+<div id="main">
+  <form id="joinForm">
+    <input type="text" id="name" name="name" placeholder="What is your name, human?" />
+    <input type="button" id="joinGame" value="Join Game" />
+  </form>
+</div>
+
+<div class="social hidden">
+  <h3>Messages</h3>
+  <div id="log">
+  </div>
+  <div>Chat: <input id="chat" /></div>
+</div>
+
+<div class="modal help-overlay hidden">
+  <div class="content">
+    <h2>Objective</h2>
+    <span class="details">
+    Reveal the entire board as quickly as possible while hitting as few mines as possible. You'll be racing against the other players to uncover tiles for points. As you uncover a tile, it will tell you how many mines are adjacent to it. If you identify a location you think has a mine, you can place a flag there with a right click, or shift click to mark it. Be careful, other players may place false flags to distract you!
+    </span>
+    <br/>
+    <br/>
+    <h2>Flags</h2>
+    <span class="details">
+    Right click, or shift-click to place a flag.<br/>
+    To clear a flag, right/shift click it again.
+    </span>
+    <br/>
+    <br/>
+    <h2>Scoring</h2>
+    <div class="clear"></div>
+    <br/>
+    <span class="details">
+    All scores adjusted by the current multiplier.<br/>
+    As the game progresses the multiplier increases..<br/>
+    Those last few clicks really count!<br/>
+    <br/>
+    Tile Revealed: <span class="right">1 point</span>
+    <br/>
+    Bomb triggered: <span class="right">-5 points</span>
+    </span>
+  </div>
+
+  <div class="button dismiss">OK</div>
+  <div class="clear"></div>
+</div>
+
+<script src="/js/handlebars.1.0.0.beta.3.js"></script>
+<script src="/js/templates.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/game.js"></script>
+<script src="/js/multisweeper.js"></script>

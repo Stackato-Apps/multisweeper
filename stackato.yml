@@ -1,0 +1,16 @@
+name: multisweeper
+
+framework:
+  type: node
+
+mem: 64M
+
+services:
+  redis: redis-multisweeper
+
+processes:
+
+  web: node lib/app.js
+
+ignores: 
+  - .git

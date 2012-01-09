@@ -1,0 +1,23 @@
+<div id="content">
+  <h1>Multisweeper</h1>
+
+  <p>
+    If you wake the Minesweeper-bot he'll force you and anyone else who comes along to find mines in a battle to the death!
+  </p>
+
+  <br />
+  {{#if games}}
+  <span class="stats">
+    <b>{{players}}</b> players have blown themselves up with <b>{{bombs}}</b> bombs over <b>{{games}}</b> games.
+  </span>
+  {{/if}}
+
+  <div id="play">
+    <p>Wake up you lazy robot!</p> <a href="/game">Play Game</a>
+  </div>
+</div>
+
+<script src="/js/handlebars.1.0.0.beta.3.js"></script>
+<script src="/js/templates.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/browser-detect.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,42 @@
+<ul class="players">
+  {{#players}}
+  <li class="player player-{{color}}">
+    <span class="name truncate">{{playerName}}</span> <span class="score">{{score}}</span>
+  </li>
+  {{/players}}
+  <li class="player help">
+    <span class="name">Help</span><span class="score">?</span>
+  </li>
+  <li class="player multiplier">
+    <span class="name">Multiplier</span><span class="score">x{{multiplier}}</span>
+  </li>
+</ul>
+
+<div class="clear"></div>
+
+<div data-board-id="{{uuid}}" class="board {{active}}">
+  {{#index board}}
+  <div data-row-id="{{idx}}" class="row">
+    {{#index line}}
+    <div data-col-id="{{idx}}" class="cell {{classForCell .}}">
+      <span>{{item}}</span>&nbsp;
+    </div>
+    {{/index}}
+  </div>
+  {{/index}}
+</div>
+
+<div class="waiting {{active}}">
+MultiSweeper is more fun with more players.. You can wait for more, or start now
+</div>
+<div id="gameControls">
+<div class="waiting {{active}}">
+<input class="start" value="Start Game" type="button"/>
+</div>
+<input type="button" value="Leave Game" id="leaveGame"/>
+<div class="clear"></div>
+</div>
+
+
+<div class="gameover hidden"></div>
+<br/>
