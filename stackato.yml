@@ -1,7 +1,7 @@
 name: multisweeper
 framework:
   type: node
-mem: 64M
+mem: 128M
 min_version:
   client: 1.4.3
 services:
