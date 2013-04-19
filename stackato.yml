@@ -3,7 +3,7 @@ name: multisweeper
 framework:
   type: node
 
-mem: 64M
+mem: 128M
 
 services:
   redis-multisweeper: redis
