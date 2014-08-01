@@ -1,8 +1,0 @@
-name: multisweeper
-mem: 128M
-min_version:
-  client: 1.4.3
-services:
-  ${name}-db: redis
-ignores: 
-  - .git
