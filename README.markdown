@@ -13,7 +13,7 @@ https://github.com/jcohen/multisweeper
 `node lib/app.js`
 
 
-##Deploying to Stackato
+##Deploying to HPE Helion Stackato
 
 `stackato push -n`
 
